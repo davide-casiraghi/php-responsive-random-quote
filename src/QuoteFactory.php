@@ -1,10 +1,10 @@
-<?php 
-    
-    namespace DavideCasiraghi\PhpResponsiveRandomQuote;
+<?php
 
-    class QuoteFactory 
-    {    
-        protected $quotes = [
+namespace DavideCasiraghi\PhpResponsiveRandomQuote;
+
+class QuoteFactory
+{
+    protected $quotes = [
             'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
             'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
             'I saw the angel in the marble and carved until I set him free',
@@ -15,16 +15,16 @@
             'One thing goes awry, and its effects go on and on and on and on.',
             'The body process it is not linear, it is circular; always, it is circular.',
         ];
-        
-        public function __construct(array $quotes = null)
-        {
-            if($quotes){
-                $this->quotes = $quotes;
-            }
-            
-        }
-        public function getRandomQuote()
-        {
-            return $this->quotes[array_rand($this->quotes)];
+
+    public function __construct(array $quotes = null)
+    {
+        if ($quotes) {
+            $this->quotes = $quotes;
         }
     }
+
+    public function getRandomQuote()
+    {
+        return $this->quotes[array_rand($this->quotes)];
+    }
+}

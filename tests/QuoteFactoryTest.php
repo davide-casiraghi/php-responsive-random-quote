@@ -1,16 +1,16 @@
-<?php 
+<?php
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Tests;
 
-use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 use PHPUnit\Framework\TestCase;
+use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 
 class QuoteFactoryTest extends TestCase
 {
-        /** @test */
-        public function it_return_a_random_quote()
-        {
-            $wiseQuotes = [
+    /** @test */
+    public function it_return_a_random_quote()
+    {
+        $wiseQuotes = [
                 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
                 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
                 'I saw the angel in the marble and carved until I set him free',
@@ -21,22 +21,22 @@ class QuoteFactoryTest extends TestCase
                 'One thing goes awry, and its effects go on and on and on and on.',
                 'The body process it is not linear, it is circular; always, it is circular.',
             ];
-            
-                $quotes = new QuoteFactory();
-                $quote = $quotes->getRandomQuote();
-                
-                // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
-                    $this->assertContains($quote, $wiseQuotes);  
-        }
-        
-        /** @test */
-        public function it_return_a_predefined_quote()
-        {
-                $quotes = new QuoteFactory([
+
+        $quotes = new QuoteFactory();
+        $quote = $quotes->getRandomQuote();
+
+        // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
+        $this->assertContains($quote, $wiseQuotes);
+    }
+
+    /** @test */
+    public function it_return_a_predefined_quote()
+    {
+        $quotes = new QuoteFactory([
                     'This is a quote',
                 ]);
-                $quote = $quotes->getRandomQuote();
-                
-                $this->assertSame('This is a quote', $quote);
-        }
+        $quote = $quotes->getRandomQuote();
+
+        $this->assertSame('This is a quote', $quote);
+    }
 }
