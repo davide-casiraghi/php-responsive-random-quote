@@ -1,8 +1,8 @@
 <?php 
 
-namespace Davidecasiraghi\PhpResponsiveRandomQuote\Tests;
+namespace DavideCasiraghi\PhpResponsiveRandomQuote\Tests;
 
-use Davidecasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
+use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 use PHPUnit\Framework\TestCase;
 
 class QuoteFactoryTest extends TestCase

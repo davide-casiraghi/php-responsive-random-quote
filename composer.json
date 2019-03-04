@@ -1,5 +1,5 @@
 {
-    "name": "davidecasiraghi/php-responsive-random-quote",
+    "name": "davide-casiraghi/php-responsive-random-quote",
     "description": "A package that shows responsive random quotes",
     "license": "MIT",
     "authors": [
@@ -11,12 +11,12 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Davidecasiraghi\\PhpResponsiveRandomQuote\\": "src/"
+            "DavideCasiraghi\\PhpResponsiveRandomQuote\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Davidecasiraghi\\PhpResponsiveRandomQuote\\Tests\\": "tests"
+            "DavideCasiraghi\\PhpResponsiveRandomQuote\\Tests\\": "tests"
         }
     },
     "require-dev": {

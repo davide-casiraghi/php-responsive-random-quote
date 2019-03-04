@@ -1,6 +1,6 @@
 <?php 
     
-    namespace Davidecasiraghi\PhpResponsiveRandomQuote;
+    namespace DavideCasiraghi\PhpResponsiveRandomQuote;
 
     class QuoteFactory 
     {    
