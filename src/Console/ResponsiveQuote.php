@@ -5,7 +5,7 @@ namespace DavideCasiraghi\PhpResponsiveRandomQuote\Console;
 use Illuminate\Console\Command;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 
-class PhpResponsiveQuote extends Command
+class ResponsiveQuote extends Command
 {
     protected $signature = 'php-responsive-quote';
 
