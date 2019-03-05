@@ -9,7 +9,11 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        
+        if($this->app->runningInConsole()){
+            $this->commands([
+                PhpResponsiveQuote::class  //the console class
+            ])
+        }
     }
     public function register()
     {
