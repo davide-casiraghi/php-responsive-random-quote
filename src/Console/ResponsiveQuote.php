@@ -3,6 +3,7 @@
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Console;
 
 use Illuminate\Console\Command;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Facedes\PhpResponsiveQuote;
 
 class ResponsiveQuote extends Command
 {
