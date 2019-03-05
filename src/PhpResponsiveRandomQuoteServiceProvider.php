@@ -3,12 +3,13 @@
 namespace DavideCasiraghi\PhpResponsiveRandomQuote;
 
 use Illuminate\Support\ServiceProvider;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Console\PhpResponsiveQuote;
+use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 
 class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
         if($this->app->runningInConsole()){
             $this->commands([
                 PhpResponsiveQuote::class  //the console class
