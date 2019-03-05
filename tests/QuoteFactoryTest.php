@@ -2,13 +2,20 @@
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Tests;
 
+use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
+
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Exception\RequestException;
 
 class QuoteFactoryTest extends TestCase
 {
     /** @test */
-    public function it_return_a_random_quote()
+    /*public function it_return_a_random_quote()
     {
         $wiseQuotes = [
                 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
@@ -28,9 +35,30 @@ class QuoteFactoryTest extends TestCase
         // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
         $this->assertContains($quote, $wiseQuotes);
     }
+    */
+    
+    /** @test */
+    public function it_return_a_random_quote()
+    {
+        // http://docs.guzzlephp.org/en/stable/testing.html
+        $mock = new MockHandler([
+            new Response(200, [], '{ "type": "success", "value": { "id": 294, "joke": "Jean-Claude Van Damme once kicked Chuck Norris\' ass. He was then awakened from his dream by a roundhouse kick to the face.", "categories": [] } }'),
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        
+        $client = new Client(['handler' => $handler]);
+
+        $quotes = new QuoteFactory($client);
+        $quote = $quotes->getRandomQuote();
+
+        // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
+        //$this->assertContains($quote, $wiseQuotes);
+        $this->assertSame('Jean-Claude Van Damme once kicked Chuck Norris\' ass. He was then awakened from his dream by a roundhouse kick to the face.',$quote);
+    }
 
     /** @test */
-    public function it_return_a_predefined_quote()
+    /*public function it_return_a_predefined_quote()
     {
         $quotes = new QuoteFactory([
                     'This is a quote',
@@ -38,5 +66,7 @@ class QuoteFactoryTest extends TestCase
         $quote = $quotes->getRandomQuote();
 
         $this->assertSame('This is a quote', $quote);
-    }
+    }*/
+    
+    
 }

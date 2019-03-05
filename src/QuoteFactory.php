@@ -2,9 +2,13 @@
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote;
 
+use GuzzleHttp\Client;
+
 class QuoteFactory
 {
-    protected $quotes = [
+    const API_ENDPOINT = 'http://api.icndb.com/jokes/random/';
+    protected $client;
+    /*protected $quotes = [
             'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
             'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
             'I saw the angel in the marble and carved until I set him free',
@@ -21,10 +25,19 @@ class QuoteFactory
         if ($quotes) {
             $this->quotes = $quotes;
         }
+    }*/
+    public function __construct(Client $client = null)
+    {
+        $this->client = $client ?: new Client();
     }
 
     public function getRandomQuote()
     {
-        return $this->quotes[array_rand($this->quotes)];
+        //return $this->quotes[array_rand($this->quotes)];
+        $response = $this->client->get(self::API_ENDPOINT);
+        
+        $joke = json_decode($response->getBody()->getContents());
+        
+        return $joke->value->joke;
     }
 }
