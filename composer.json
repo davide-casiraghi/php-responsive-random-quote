@@ -24,5 +24,15 @@
     "require-dev": {
         "phpunit/phpunit": "^7.5",
         "orchestra/testbench": "~3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DavideCasiraghi\\PhpResponsiveRandomQuote\\PhpResponsiveRandomQuoteServiceProvider"
+            ],
+            "aliases": {
+                "PhpResponsiveQuote": "DavideCasiraghi\\PhpResponsiveRandomQuote\\Facades\\PhpResponsiveQuote"
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ class QuoteFactoryTest extends TestCase
     */
     
     /** @test */
-    public function it_return_a_random_quote()
+        public function it_return_a_random_quote()
     {
         // http://docs.guzzlephp.org/en/stable/testing.html
         $mock = new MockHandler([
