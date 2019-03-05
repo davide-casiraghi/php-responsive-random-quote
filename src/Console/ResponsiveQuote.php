@@ -13,6 +13,6 @@ class ResponsiveQuote extends Command
 
     public function handle()
     {
-        $this->info(self::getRandomQuote());
+        $this->info(PhpResponsiveQuote::getRandomQuote());
     }
 }

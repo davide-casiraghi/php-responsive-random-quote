@@ -34,6 +34,7 @@ class QuoteFactory
 
     public function getRandomQuote()
     {
+        
         //return $this->quotes[array_rand($this->quotes)];
         $response = $this->client->get(self::API_ENDPOINT);
 
