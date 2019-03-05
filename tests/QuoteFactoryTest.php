@@ -3,14 +3,11 @@
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Tests;
 
 use GuzzleHttp\Client;
-use PHPUnit\Framework\TestCase;
-use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
-
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
+use PHPUnit\Framework\TestCase;
+use GuzzleHttp\Handler\MockHandler;
+use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 
 class QuoteFactoryTest extends TestCase
 {
@@ -36,9 +33,9 @@ class QuoteFactoryTest extends TestCase
         $this->assertContains($quote, $wiseQuotes);
     }
     */
-    
+
     /** @test */
-        public function it_return_a_random_quote()
+    public function it_return_a_random_quote()
     {
         // http://docs.guzzlephp.org/en/stable/testing.html
         $mock = new MockHandler([
@@ -46,7 +43,7 @@ class QuoteFactoryTest extends TestCase
         ]);
 
         $handler = HandlerStack::create($mock);
-        
+
         $client = new Client(['handler' => $handler]);
 
         $quotes = new QuoteFactory($client);
@@ -54,10 +51,10 @@ class QuoteFactoryTest extends TestCase
 
         // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
         //$this->assertContains($quote, $wiseQuotes);
-        $this->assertSame('Jean-Claude Van Damme once kicked Chuck Norris\' ass. He was then awakened from his dream by a roundhouse kick to the face.',$quote);
+        $this->assertSame('Jean-Claude Van Damme once kicked Chuck Norris\' ass. He was then awakened from his dream by a roundhouse kick to the face.', $quote);
     }
 
-    /** @test */
+    /* @test */
     /*public function it_return_a_predefined_quote()
     {
         $quotes = new QuoteFactory([
@@ -67,6 +64,4 @@ class QuoteFactoryTest extends TestCase
 
         $this->assertSame('This is a quote', $quote);
     }*/
-    
-    
 }
