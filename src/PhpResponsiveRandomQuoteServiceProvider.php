@@ -13,7 +13,7 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         if($this->app->runningInConsole()){
             $this->commands([
                 PhpResponsiveQuote::class  //the console class
-            ])
+            ]);
         }
     }
 
