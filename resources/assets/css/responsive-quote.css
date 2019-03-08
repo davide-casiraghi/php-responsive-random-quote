@@ -1,0 +1,33 @@
+blockquote.quoteOfTheDay{
+    text-align:center; padding:2rem;
+}
+
+blockquote.quoteOfTheDay .text{
+    position:relative; 
+    display:inline;
+}
+
+blockquote.quoteOfTheDay .text .start-quote{
+    position: absolute; 
+    top: -1.5rem; 
+    left: -3rem; 
+    height: 1.5rem; 
+    /*font-family:georgia; 
+    font-size:2rem;*/
+}
+blockquote.quoteOfTheDay .text .end-quote{
+    position: absolute; 
+    width: auto; 
+    height: .8em; 
+    margin: 0 0 0 5px; 
+    right: -2rem; 
+    bottom: -1rem; 
+    /*font-family:georgia; 
+    font-size:2rem;*/
+}
+blockquote.quoteOfTheDay cite {
+    color: #999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
