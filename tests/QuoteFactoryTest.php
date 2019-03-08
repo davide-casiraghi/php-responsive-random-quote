@@ -14,7 +14,7 @@ class QuoteFactoryTest extends TestCase
     /** @test */
     public function it_return_a_random_quote()
     {
-        $wiseQuotes = [
+        /*$wiseQuotes = [
                 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
                 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
                 'I saw the angel in the marble and carved until I set him free',
@@ -24,7 +24,16 @@ class QuoteFactoryTest extends TestCase
                 'Your stability relies in appropriate relationships, and that is all.',
                 'One thing goes awry, and its effects go on and on and on and on.',
                 'The body process it is not linear, it is circular; always, it is circular.',
-            ];
+            ];*/
+         $wiseQuotes = array(
+            'Dr. Ida Rolf' => 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.', 
+            'Moshe Feldenkreis' => 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.', 
+            'Michelangelo' => 'I saw the angel in the marble and carved until I set him free', 
+            'Anonymus' => 'Energy flows where attention goes', 
+            'Anonymus' => 'The battle is already decided before you start. Because all the movements are already in you.',
+            'Joseph Heller' => 'Depending on the structure of the body on which it acts, gravity can either support us and provide a springboard for our activities or it can pull at us and tear us down.',
+            'Lao Tsu' => 'All actions begins in rest.',
+        ); 
 
         $quotes = new QuoteFactory();
         $quote = $quotes->getRandomQuote();
