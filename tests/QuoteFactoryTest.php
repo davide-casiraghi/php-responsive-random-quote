@@ -12,7 +12,7 @@ use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 class QuoteFactoryTest extends TestCase
 {
     /** @test */
-    /*public function it_return_a_random_quote()
+    public function it_return_a_random_quote()
     {
         $wiseQuotes = [
                 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
@@ -32,10 +32,10 @@ class QuoteFactoryTest extends TestCase
         // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
         $this->assertContains($quote, $wiseQuotes);
     }
-    */
+    
 
     /** @test */
-    public function it_return_a_random_quote()
+    /*public function it_return_a_random_quote()
     {
         // http://docs.guzzlephp.org/en/stable/testing.html
         $mock = new MockHandler([
@@ -53,8 +53,9 @@ class QuoteFactoryTest extends TestCase
         //$this->assertContains($quote, $wiseQuotes);
         $this->assertSame('Jean-Claude Van Damme once kicked Chuck Norris\' ass. He was then awakened from his dream by a roundhouse kick to the face.', $quote);
     }
+    */
 
-    /* @test */
+    /** @test */
     /*public function it_return_a_predefined_quote()
     {
         $quotes = new QuoteFactory([
