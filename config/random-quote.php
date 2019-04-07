@@ -1,5 +1,6 @@
-<?php 
+<?php
+
 
     return[
-            'route' => 'php-responsive-quote'
+            'route' => 'php-responsive-quote',
     ];

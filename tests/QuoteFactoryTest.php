@@ -25,28 +25,28 @@ class QuoteFactoryTest extends TestCase
                 'One thing goes awry, and its effects go on and on and on and on.',
                 'The body process it is not linear, it is circular; always, it is circular.',
             ];*/
-            $wiseQuotes = array(
-                0 => array(
+        $wiseQuotes = [
+                0 => [
                     'author' => 'Dr. Ida Rolf',
                     'text' => 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
-                ),
-                1 => array(
+                ],
+                1 => [
                     'author' => 'Moshe Feldenkreis',
                     'text' => 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
-                ),
-                2 => array(
+                ],
+                2 => [
                     'author' => 'Michelangelo',
                     'text' => 'I saw the angel in the marble and carved until I set him free',
-                ),
-                3 => array(
+                ],
+                3 => [
                     'author' => 'Anonymus',
                     'text' => 'Energy flows where attention goes',
-                ),
-                4 => array(
+                ],
+                4 => [
                     'author' => 'Lao Tsu',
                     'text' => 'All actions begins in rest.',
-                ),
-            );
+                ],
+            ];
 
         $quotes = new QuoteFactory();
         $quote = $quotes->getRandomQuote();
@@ -54,9 +54,8 @@ class QuoteFactoryTest extends TestCase
         // We assert that the $wiseQuotes array contains the random quote picked from the array in the QuoteFactory
         $this->assertContains($quote, $wiseQuotes);
     }
-    
 
-    /** @test */
+    /* @test */
     /*public function it_return_a_random_quote()
     {
         // http://docs.guzzlephp.org/en/stable/testing.html
@@ -77,7 +76,7 @@ class QuoteFactoryTest extends TestCase
     }
     */
 
-    /** @test */
+    /* @test */
     /*public function it_return_a_predefined_quote()
     {
         $quotes = new QuoteFactory([
