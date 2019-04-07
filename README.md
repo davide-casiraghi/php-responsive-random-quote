@@ -1,3 +1,5 @@
+[![StyleCI](https://styleci.io/repos/173717359/shield?style=flat-square)](https://styleci.io/repos/173717359)
+
 # Reponsive Random Quotes
 
 Show a random quote or the quote of the day in your PHP project.
