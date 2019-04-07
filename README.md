@@ -2,6 +2,7 @@
 <a href="https://travis-ci.org/davide-casiraghi/php-responsive-random-quote"><img src="https://travis-ci.org/davide-casiraghi/php-responsive-random-quote.svg" alt="Build Status"></a>
 [![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/php-responsive-random-quote.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/php-responsive-random-quote)
 [![Coverage Status](https://scrutinizer-ci.com/g/davide-casiraghi/php-responsive-random-quote/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/davide-casiraghi/php-responsive-random-quote/)
+<a href="https://codeclimate.com/github/davide-casiraghi/php-responsive-random-quote/maintainability"><img src="https://api.codeclimate.com/v1/badges/4edf745f2b64f7f0a53c/maintainability" /></a>
 [![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/php-responsive-random-quote.svg)](https://github.com/davide-casiraghi/php-responsive-random-quote) 
 
 # Reponsive Random Quotes
