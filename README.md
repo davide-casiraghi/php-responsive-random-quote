@@ -1,5 +1,6 @@
 [![StyleCI](https://styleci.io/repos/173717359/shield?style=flat-square)](https://styleci.io/repos/173717359)
 <a href="https://travis-ci.org/davide-casiraghi/php-responsive-random-quote"><img src="https://travis-ci.org/davide-casiraghi/php-responsive-random-quote.svg" alt="Build Status"></a>
+[![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/php-responsive-random-quote.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/php-responsive-random-quote)
 [![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/php-responsive-random-quote.svg)](https://github.com/davide-casiraghi/php-responsive-random-quote) 
 
 # Reponsive Random Quotes
