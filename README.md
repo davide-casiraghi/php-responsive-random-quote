@@ -17,6 +17,13 @@ Require the package using composer:
 composer require davide-casiraghi/php-responsive-random-quote
 ```
 
+## Publish the files from the service provider
+```bash
+php artisan vendor:publish --force
+```
+And then pick the number of our service provider.
+
+
 ## Usage
 
 ```php
@@ -25,6 +32,13 @@ use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 $quotes = new QuoteFactory();
 
 $quote = $quotes->getRandomQuote();
+```
+Then in any blade file is possible include the view like this:
+```php
+@include('vendor.responsive-quotes.show', [
+   'quoteAuthor' => $quote['text'],
+   'quoteText' => $quote['author'],
+])
 ```
 
 ## Contributing
