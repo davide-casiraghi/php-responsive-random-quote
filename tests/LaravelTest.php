@@ -54,8 +54,12 @@ class LaravelTest extends TestCase
     }*/
     
     /** @test */
-    public function the_route_show_can_be_accessed()
+    public function the_route_index_can_be_accessed()
     {
+        PhpResponsiveQuote::shouldReceive('getRandomQuote')
+            ->once()
+            ->andReturn('some joke');
+            
         $this->get('php-responsive-quote')->dump();
             //->assertViewIs('laravel-responsive-gallery::show')
             //->assertViewHas('galleryImage')

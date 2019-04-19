@@ -9,7 +9,7 @@ class ResponsiveQuoteController
     /*public function __invoke()
     {
         //return PhpResponsiveQuote::getRandomQuote();
-        
+        dd("asd 1");
         return view('php-responsive-quote::show', [
             'quote' => PhpResponsiveQuote::getRandomQuote(),
         ]);
@@ -21,7 +21,7 @@ class ResponsiveQuoteController
      *
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function index()
     {
         return view('php-responsive-quote::show', [
             'quote' => PhpResponsiveQuote::getRandomQuote(),
