@@ -9,8 +9,8 @@ class ResponsiveQuoteController
     {
         //return PhpResponsiveQuote::getRandomQuote();
         
-        return view('php-responsive-quote::joke',[
-            'joke' => PhpResponsiveQuote::getRandomQuote()
+        return view('php-responsive-quote::show',[
+            'quote' => PhpResponsiveQuote::getRandomQuote()
         ]);
     }
 }
