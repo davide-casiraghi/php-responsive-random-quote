@@ -37,7 +37,7 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
 
         //Route::get(config('random-quote.route'), ResponsiveQuoteController::class);
         Route::group(['middleware' => 'web'], function () {
-            Route::resource('random-quote', ResponsiveGalleryController::class);
+            Route::resource('php-responsive-quote', ResponsiveQuoteController::class);
         });
     
     }

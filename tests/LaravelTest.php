@@ -38,16 +38,27 @@ class LaravelTest extends TestCase
     }
 
     /** @test */
-    public function the_route_can_be_accessed()
+    /*public function the_route_can_be_accessed()
     {
+        
         PhpResponsiveQuote::shouldReceive('getRandomQuote')
             ->once()
             ->andReturn('some joke');
 
-        $this->get('php-responsive-quote')
-             ->assertViewIs('php-responsive-quote::show')
-             ->assertViewHas('quote')
-             ->assertViewHas('quote', 'some joke')
-             ->assertStatus(200);
+        $this->get('php-responsive-quote')->dump();
+        
+             //->assertViewIs('php-responsive-quote::show')
+             //->assertViewHas('quote')
+             //->assertViewHas('quote', 'some joke')
+             //->assertStatus(200);
+    }*/
+    
+    /** @test */
+    public function the_route_show_can_be_accessed()
+    {
+        $this->get('responsive-gallery/1')
+            ->assertViewIs('laravel-responsive-gallery::show')
+            ->assertViewHas('galleryImage')
+            ->assertStatus(200);
     }
 }
