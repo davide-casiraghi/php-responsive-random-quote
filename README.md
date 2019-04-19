@@ -23,6 +23,10 @@ php artisan vendor:publish --force
 ```
 And then pick the number of our service provider.
 
+## Import the _responsive-quote.scss file in /resources/scss/app.scss
+```php
+@import 'vendor/responsive-quotes/responsive-quote';
+```
 
 ## Usage
 
