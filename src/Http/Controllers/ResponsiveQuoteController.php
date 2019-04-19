@@ -1,6 +1,7 @@
-<?php 
+<?php
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers;
+
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 
 class ResponsiveQuoteController
