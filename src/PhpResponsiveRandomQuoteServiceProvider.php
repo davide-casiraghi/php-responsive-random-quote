@@ -28,10 +28,18 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->publishes([
-        __DIR__.'/../resources/assets' => public_path('vendor/responsive-quotes/assets/'),
-        ], 'assets');
+        __DIR__.'/../resources/assets/images' => public_path('vendor/responsive-quotes/assets/images/'),
+        ], 'images');
+        
+        $this->publishes([
+            __DIR__.'/../resources/assets/sass' => resource_path('sass/vendor/responsive-quotes/'),
+        ], 'sass');
 
-        Route::get(config('random-quote.route'), ResponsiveQuoteController::class);
+        //Route::get(config('random-quote.route'), ResponsiveQuoteController::class);
+        Route::group(['middleware' => 'web'], function () {
+            Route::resource('random-quote', ResponsiveGalleryController::class);
+        });
+    
     }
 
     public function register()
