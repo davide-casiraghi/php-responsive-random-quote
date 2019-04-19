@@ -9,9 +9,9 @@ class ResponsiveQuoteController
     public function __invoke()
     {
         //return PhpResponsiveQuote::getRandomQuote();
-        
-        return view('php-responsive-quote::show',[
-            'quote' => PhpResponsiveQuote::getRandomQuote()
+
+        return view('php-responsive-quote::show', [
+            'quote' => PhpResponsiveQuote::getRandomQuote(),
         ]);
     }
 }
