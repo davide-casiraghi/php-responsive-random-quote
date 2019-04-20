@@ -64,9 +64,10 @@ class LaravelTest extends TestCase
                 'text' => 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
             ]);
                 
-        $this->get('php-responsive-quote')->dump();
-            //->assertViewIs('php-responsive-quote::index')
-            //->assertViewHas('galleryImage')
-            //->assertStatus(200);
+        $this->get('php-responsive-quote')
+            ->assertViewIs('php-responsive-quote::index')
+            ->assertViewHas('quoteAuthor')
+            ->assertViewHas('quoteText')
+            ->assertStatus(200);
     }
 }
