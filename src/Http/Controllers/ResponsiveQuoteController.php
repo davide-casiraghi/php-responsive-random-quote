@@ -14,8 +14,7 @@ class ResponsiveQuoteController
             'quote' => PhpResponsiveQuote::getRandomQuote(),
         ]);
     }*/
-    
-    
+
     /**
      * Display the specified resource.
      *
@@ -24,13 +23,11 @@ class ResponsiveQuoteController
     public function index()
     {
         $quote = PhpResponsiveQuote::getRandomQuote();
-        
+
         // the view name is set in the - Service provider - boot - loadViewsFrom
         return view('php-responsive-quote::index', [
             'quoteAuthor' => $quote['author'],
             'quoteText' => $quote['text'],
         ]);
     }
-    
-    
 }

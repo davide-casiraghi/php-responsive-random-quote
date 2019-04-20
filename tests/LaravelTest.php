@@ -40,30 +40,29 @@ class LaravelTest extends TestCase
     /** @test */
     /*public function the_route_can_be_accessed()
     {
-        
+
         PhpResponsiveQuote::shouldReceive('getRandomQuote')
             ->once()
             ->andReturn('some joke');
 
         $this->get('php-responsive-quote')->dump();
-        
+
              //->assertViewIs('php-responsive-quote::show')
              //->assertViewHas('quote')
              //->assertViewHas('quote', 'some joke')
              //->assertStatus(200);
     }*/
-    
+
     /** @test */
     public function the_route_index_can_be_accessed()
     {
-        
         PhpResponsiveQuote::shouldReceive('getRandomQuote')
             ->once()
             ->andReturn([
                 'author' => 'Moshe Feldenkreis',
                 'text' => 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
             ]);
-                
+
         $this->get('php-responsive-quote')
             ->assertViewIs('php-responsive-quote::index')
             ->assertViewHas('quoteAuthor')
