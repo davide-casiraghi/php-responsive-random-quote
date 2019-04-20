@@ -34,6 +34,18 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/assets/sass' => resource_path('sass/vendor/responsive-quotes/'),
         ], 'sass');
+        
+        if (! class_exists('CreateQuotesTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_quotes_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_quotes_table.php'),
+            ], 'migrations');
+        }
+        
+        if (! class_exists('CreateQuoteTranslationsTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_quote_translations_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_quote_translations_table.php'),
+            ], 'migrations');
+        }
 
         //Route::get(config('random-quote.route'), ResponsiveQuoteController::class);
         Route::group(['middleware' => 'web'], function () {
