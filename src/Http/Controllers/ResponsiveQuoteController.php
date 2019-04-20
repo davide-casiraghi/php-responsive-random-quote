@@ -23,7 +23,7 @@ class ResponsiveQuoteController
      */
     public function index()
     {
-        return view('php-responsive-quote::show', [
+        return view('php-responsive-random-quote::index', [
             'quote' => PhpResponsiveQuote::getRandomQuote(),
         ]);
     }
