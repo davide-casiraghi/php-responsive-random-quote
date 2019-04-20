@@ -1,0 +1,20 @@
+
+
+Code Coverage Report:    
+  2019-04-20 09:37:56    
+                         
+ Summary:                
+  Classes: 80.00% (4/5)  
+  Methods: 85.71% (6/7)  
+  Lines:   97.06% (33/34)
+
+\DavideCasiraghi\PhpResponsiveRandomQuote::DavideCasiraghi\PhpResponsiveRandomQuote\PhpResponsiveRandomQuoteServiceProvider
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 23/ 23)
+\DavideCasiraghi\PhpResponsiveRandomQuote::DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory
+  Methods:  50.00% ( 1/ 2)   Lines:  75.00% (  3/  4)
+\DavideCasiraghi\PhpResponsiveRandomQuote\Console::DavideCasiraghi\PhpResponsiveRandomQuote\Console\ResponsiveQuote
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+\DavideCasiraghi\PhpResponsiveRandomQuote\Facades::DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers::DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers\ResponsiveQuoteController
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)
