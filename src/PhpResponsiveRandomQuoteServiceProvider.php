@@ -30,7 +30,7 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         $this->publishes([
         __DIR__.'/../resources/assets/images' => public_path('vendor/responsive-quotes/assets/images/'),
         ], 'images');
-        
+
         $this->publishes([
             __DIR__.'/../resources/assets/sass' => resource_path('sass/vendor/responsive-quotes/'),
         ], 'sass');
@@ -39,7 +39,6 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         Route::group(['middleware' => 'web'], function () {
             Route::resource('php-responsive-quote', ResponsiveQuoteController::class);
         });
-    
     }
 
     public function register()
