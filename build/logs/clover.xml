@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1555753076">
-  <project timestamp="1555753076">
+<coverage generated="1555758513">
+  <project timestamp="1555758513">
     <package name="DavideCasiraghi\PhpResponsiveRandomQuote\Console">
       <file name="/Users/davidecasiraghi/Documents/Sync/www/myJob/@github/@phpPackageDevelopment/php-responsive-random-quote/src/Console/ResponsiveQuote.php">
         <class name="DavideCasiraghi\PhpResponsiveRandomQuote\Console\ResponsiveQuote" namespace="DavideCasiraghi\PhpResponsiveRandomQuote\Console">
@@ -27,12 +27,12 @@
         <class name="DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers\ResponsiveQuoteController" namespace="DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
         </class>
-        <line num="24" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="26" type="stmt" count="1"/>
+        <line num="23" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="1"/>
-        <line num="31" type="stmt" count="1"/>
-        <metrics loc="36" ncloc="21" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        <metrics loc="33" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </file>
     </package>
     <package name="DavideCasiraghi\PhpResponsiveRandomQuote">
@@ -59,13 +59,13 @@
         <line num="36" type="stmt" count="2"/>
         <line num="40" type="stmt" count="2"/>
         <line num="41" type="stmt" count="2"/>
-        <line num="43" type="stmt" count="2"/>
-        <line num="45" type="method" name="register" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="44" type="method" name="register" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="47" type="stmt" count="2"/>
         <line num="48" type="stmt" count="2"/>
-        <line num="49" type="stmt" count="2"/>
+        <line num="50" type="stmt" count="2"/>
         <line num="51" type="stmt" count="2"/>
-        <line num="52" type="stmt" count="2"/>
-        <metrics loc="53" ncloc="49" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="25" coveredelements="25"/>
+        <metrics loc="52" ncloc="48" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="25" coveredelements="25"/>
       </file>
       <file name="/Users/davidecasiraghi/Documents/Sync/www/myJob/@github/@phpPackageDevelopment/php-responsive-random-quote/src/QuoteFactory.php">
         <class name="DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory" namespace="DavideCasiraghi\PhpResponsiveRandomQuote">
@@ -80,6 +80,6 @@
         <metrics loc="66" ncloc="41" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="6" coveredelements="4"/>
       </file>
     </package>
-    <metrics files="5" loc="186" ncloc="142" classes="5" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="33" elements="41" coveredelements="39"/>
+    <metrics files="5" loc="182" ncloc="138" classes="5" methods="7" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="33" elements="41" coveredelements="39"/>
   </project>
 </coverage>
