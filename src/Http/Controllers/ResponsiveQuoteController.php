@@ -23,8 +23,12 @@ class ResponsiveQuoteController
      */
     public function index()
     {
-        return view('php-responsive-random-quote::index', [
-            'quote' => PhpResponsiveQuote::getRandomQuote(),
+        $quote = PhpResponsiveQuote::getRandomQuote();
+        
+        // the view name is set in the - Service provider - boot - loadViewsFrom
+        return view('php-responsive-quote::index', [
+            'quoteAuthor' => $quote['text'],
+            'quoteText' => $quote['author'],
         ]);
     }
     

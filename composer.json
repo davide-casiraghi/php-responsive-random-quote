@@ -31,7 +31,7 @@
                 "DavideCasiraghi\\PhpResponsiveRandomQuote\\PhpResponsiveRandomQuoteServiceProvider"
             ],
             "aliases": {
-                "PhpResponsiveQuote": "DavideCasiraghi\\PhpResponsiveRandomQuote\\Facades\\PhpResponsiveQuote"
+                "PhpResponsiveQuote": "DavideCasiraghi\\PhpResponsiveRandomQuote\\PhpResponsiveRandomQuote"
             }
         }
     }
