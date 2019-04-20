@@ -27,8 +27,8 @@ class ResponsiveQuoteController
         
         // the view name is set in the - Service provider - boot - loadViewsFrom
         return view('php-responsive-quote::index', [
-            'quoteAuthor' => $quote['text'],
-            'quoteText' => $quote['author'],
+            'quoteAuthor' => $quote['author'],
+            'quoteText' => $quote['text'],
         ]);
     }
     
