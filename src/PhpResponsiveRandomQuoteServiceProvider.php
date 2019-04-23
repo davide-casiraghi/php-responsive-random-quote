@@ -19,6 +19,7 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'php-responsive-quote');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/responsive-quotes/'),
@@ -49,9 +50,13 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         }
 
         //Route::get(config('random-quote.route'), ResponsiveQuoteController::class);
-        Route::group(['middleware' => 'web'], function () {
+        /*Route::group(['middleware' => 'web'], function () {
             Route::resource('php-responsive-quote', ResponsiveQuoteController::class);
-        });
+            
+            //Route::get('/php-responsive-quote/random-quote/')->uses('App\Http\Controllers\ResponsiveQuoteController@showRandomQuote');
+            Route::get('/php-responsive-quote/random-quote/', ResponsiveQuoteController::class); 
+            //Route::get('random-quote', ResponsiveQuoteController::class);  
+        });*/
     }
 
     public function register()
