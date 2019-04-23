@@ -44,6 +44,14 @@ class LaravelTest extends TestCase
             ->assertViewIs('php-responsive-quote::index')
             ->assertStatus(200);
     }
+    
+    /** @test */
+    public function the_route_create_can_be_accessed()
+    {
+        $this->get('php-responsive-quote/create')
+            ->assertViewIs('php-responsive-quote::create')
+            ->assertStatus(200);
+    }
 
     /** @test */
     public function the_route_random_quote_can_be_accessed()
