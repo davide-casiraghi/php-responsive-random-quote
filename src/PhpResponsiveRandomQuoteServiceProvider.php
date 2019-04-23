@@ -38,13 +38,13 @@ class PhpResponsiveRandomQuoteServiceProvider extends ServiceProvider
         
         if (! class_exists('CreateQuotesTable')) {
             $this->publishes([
-                __DIR__.'/../database/migrations/create_quotes_table.php.stub' => database_path('migrations/'.Carbon::now()->format('d-m-Y_H-m-s-SSS').'_create_quotes_table.php'),
+                __DIR__.'/../database/migrations/create_quotes_table.php.stub' => database_path('migrations/'.Carbon::now()->format('Y-m-d_H-m-s-u').'_create_quotes_table.php'),
             ], 'migrations');
         }
         
         if (! class_exists('CreateQuoteTranslationsTable')) {
             $this->publishes([
-                __DIR__.'/../database/migrations/create_quote_translations_table.php.stub' => database_path('migrations/'.Carbon::now()->format('d-m-Y_H-m-s-SSS').'_create_quote_translations_table.php'),
+                __DIR__.'/../database/migrations/create_quote_translations_table.php.stub' => database_path('migrations/'.Carbon::now()->format('Y-m-d_H-m-s-u').'_create_quote_translations_table.php'),
             ], 'migrations');
         }
 
