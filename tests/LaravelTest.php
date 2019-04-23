@@ -138,6 +138,7 @@ class LaravelTest extends TestCase
         $request = new \Illuminate\Http\Request();
         $request->replace([
               'author' => 'test author name updated',
+              'text' => 'test text updated',
           ]);
 
         $this->put('php-responsive-quote/1', [$request, 1])
