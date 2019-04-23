@@ -2,6 +2,9 @@
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers;
 
+use Orchestra\Testbench\TestCase;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 use Illuminate\Http\Request;
 
@@ -49,17 +52,6 @@ class ResponsiveQuoteController
         ];
     }
     
-    
-    
-    /*public function __invoke()
-    {
-        //return PhpResponsiveQuote::getRandomQuote();
-        dd("asd 1");
-        return view('php-responsive-quote::show', [
-            'quote' => PhpResponsiveQuote::getRandomQuote(),
-        ]);
-    }*/
-
     /**
      * Display the specified resource.
      *
