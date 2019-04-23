@@ -11,9 +11,9 @@ class CreateQuoteTranslationsTable extends Migration
         Schema::create('quote_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quote_id')->unsigned();
-            
+
             $table->string('text')->nullable();
-            
+
             $table->string('locale')->index();
             $table->unique(['quote_id', 'locale']);
             $table->foreign('quote_id')->references('id')->on('quotes')->onDelete('cascade');

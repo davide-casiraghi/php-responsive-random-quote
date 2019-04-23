@@ -13,7 +13,7 @@ class Quote extends Model
 
     public $translatedAttributes = ['text'];
     protected $fillable = [
-        'author'
+        'author',
     ];
 
     /* public $guarded = [];
