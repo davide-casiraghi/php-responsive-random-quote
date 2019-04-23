@@ -3,14 +3,12 @@
 namespace Davidecasiraghi\PhpResponsiveRandomQuote\Tests;
 
 use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Artisan;
-use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
-use DavideCasiraghi\PhpResponsiveRandomQuote\PhpResponsiveRandomQuoteServiceProvider;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
-
-use Illuminate\Support\Facades\DB;
-
+use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
+use DavideCasiraghi\PhpResponsiveRandomQuote\PhpResponsiveRandomQuoteServiceProvider;
 
 class LaravelTest extends TestCase
 {
@@ -30,18 +28,18 @@ class LaravelTest extends TestCase
             'prefix'   => '',
         ]);
     }
-    
+
     /**
      * Setup the test environment.
      */
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadLaravelMigrations(['--database' => 'testbench']);
     }
-    
+
     protected function getPackageProviders($app)
     {
         return [
@@ -75,11 +73,11 @@ class LaravelTest extends TestCase
     /** @test */
     public function it_runs_the_migrations()
     {
-            
+
         /*$tables = DB::select("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;");
         $tables = array_map('current',$tables);
         dd($tables);*/
-        
+
         Quote::insert([
             'author' => 'test author name',
         ]);
@@ -96,7 +94,7 @@ class LaravelTest extends TestCase
             ->assertViewIs('php-responsive-quote::index')
             ->assertStatus(200);
     }
-    
+
     /** @test */
     public function the_route_create_can_be_accessed()
     {
@@ -104,35 +102,35 @@ class LaravelTest extends TestCase
             ->assertViewIs('php-responsive-quote::create')
             ->assertStatus(200);
     }
-    
+
     /** @test */
     public function the_route_destroy_can_be_accessed()
     {
         $id = Quote::insertGetId([
             'author' => 'test author name',
         ]);
-        
+
         QuoteTranslation::insert([
             'quote_id' => $id,
-            'text' => "test text",
-            'locale' => 'en'
+            'text' => 'test text',
+            'locale' => 'en',
         ]);
 
         $this->delete('php-responsive-quote/1')
             ->assertStatus(302);
     }
-    
+
     /** @test */
     public function the_route_update_can_be_accessed()
     {
         $id = Quote::insertGetId([
             'author' => 'test author name',
         ]);
-        
+
         QuoteTranslation::insert([
             'quote_id' => $id,
-            'text' => "test text",
-            'locale' => 'en'
+            'text' => 'test text',
+            'locale' => 'en',
         ]);
 
         $request = new \Illuminate\Http\Request();
@@ -144,7 +142,7 @@ class LaravelTest extends TestCase
         $this->put('php-responsive-quote/1', [$request, 1])
              ->assertStatus(302);
     }
-    
+
     /** @test */
     public function the_route_store_can_be_accessed()
     {
@@ -156,7 +154,7 @@ class LaravelTest extends TestCase
         $this
             ->followingRedirects()
             ->post('/php-responsive-quote', $data);
-            
+
         $this->assertDatabaseHas('quotes', ['author' => 'test author name']);
     }
 
@@ -166,30 +164,30 @@ class LaravelTest extends TestCase
         $id = Quote::insertGetId([
             'author' => 'test author name',
         ]);
-        
+
         QuoteTranslation::insert([
             'quote_id' => $id,
-            'text' => "test text",
-            'locale' => 'en'
+            'text' => 'test text',
+            'locale' => 'en',
         ]);
-        
+
         $this->get('php-responsive-quote/1')
             ->assertViewIs('php-responsive-quote::show')
             ->assertViewHas('quote')
             ->assertStatus(200);
     }
-    
+
     /** @test */
     public function the_route_edit_can_be_accessed()
     {
         $id = Quote::insertGetId([
             'author' => 'test author name',
         ]);
-        
+
         QuoteTranslation::insert([
             'quote_id' => $id,
-            'text' => "test text",
-            'locale' => 'en'
+            'text' => 'test text',
+            'locale' => 'en',
         ]);
 
         $this->get('php-responsive-quote/1/edit')
