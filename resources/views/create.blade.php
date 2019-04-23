@@ -17,7 +17,7 @@
                 @csrf
                 
                 <div class="row">
-                    {{-- Image file name --}}
+                    {{-- Author  --}}
                     <div class="col-12">
                         @include('php-responsive-quote::partials.input', [
                             'title' => 'Author',
@@ -27,7 +27,7 @@
                         ])
                     </div>
     
-                    {{-- Description --}}
+                    {{-- Text --}}
                     <div class="col-12">
                         @include('php-responsive-quote::partials.textarea-plain', [
                             'title' =>  'Text',
