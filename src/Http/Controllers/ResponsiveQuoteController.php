@@ -88,6 +88,27 @@ class ResponsiveQuoteController
      {
          return view('php-responsive-quote::create');
      }
+     
+     /***************************************************************************/
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $quote = new Quote();
+        $quote->author = $request->get('author');
+        $quote->text = $request->get('text');
+
+        $quote->save();
+
+        return redirect()->route('php-responsive-quote.index')
+                            ->with('success', 'Quote added succesfully');
+    }
+
     
     /**
      * Display the specified resource.
