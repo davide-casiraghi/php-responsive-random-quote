@@ -38,18 +38,21 @@ class LaravelTest extends TestCase
     }
 
     /** @test */
-    /*public function the_route_index_can_be_accessed()
+    public function the_route_index_can_be_accessed()
     {
-
-    $this->get('php-responsive-quote')
+        $this->get('php-responsive-quote')
+            ->assertViewIs('php-responsive-quote::index')
+            ->assertStatus(200);
+                    
+    /*$this->get('php-responsive-quote')
         ->assertViewIs('php-responsive-quote::index')
         ->assertViewHas('quoteAuthor')
         ->assertViewHas('quoteText')
-        ->assertStatus(200);
-    }*/
+        ->assertStatus(200);*/
+    }
 
     /** @test */
-    public function the_route_index_can_be_accessed()
+    public function the_route_random_quote_can_be_accessed()
     {
         PhpResponsiveQuote::shouldReceive('getRandomQuote')
             ->once()
