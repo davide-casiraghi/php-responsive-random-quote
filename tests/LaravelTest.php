@@ -123,6 +123,28 @@ class LaravelTest extends TestCase
     }
     
     /** @test */
+    public function the_route_update_can_be_accessed()
+    {
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+        
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => "test text",
+            'locale' => 'en'
+        ]);
+
+        $request = new \Illuminate\Http\Request();
+        $request->replace([
+              'author' => 'test author name updated',
+          ]);
+
+        $this->put('php-responsive-quote/1', [$request, 1])
+            ->assertStatus(302);
+    }
+    
+    /** @test */
     public function the_route_store_can_be_accessed()
     {
         $data = [
