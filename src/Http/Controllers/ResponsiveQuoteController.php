@@ -63,7 +63,10 @@ class ResponsiveQuoteController
         $quote->author = $request->get('author');
         $quote->text = $request->get('text');
 
-        $quote->save();
+        // Set the default language to edit the quote in English
+        App::setLocale('en');
+
+        $this->saveOnDb($request, $quote);
 
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote added succesfully');
@@ -112,18 +115,11 @@ class ResponsiveQuoteController
     {
         $quote = Quote::find($id);
         
-        // Set the default language to edit the quote in English
+        // Set the default language to update the quote in English
         App::setLocale('en');
         
         $this->saveOnDb($request, $quote);
         
-        //$quote->update($request->all());
-        
-        /*$quote->author = 'author updated';
-        $quote->translate('en')->text = 'updated text';
-        $quote->save();*/
-        
-
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote updated succesfully');
     }
