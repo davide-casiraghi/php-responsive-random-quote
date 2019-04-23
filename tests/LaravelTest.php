@@ -106,7 +106,7 @@ class LaravelTest extends TestCase
     }
     
     /** @test */
-    /*public function the_route_store_can_be_accessed()
+    public function the_route_store_can_be_accessed()
     {
         $data = [
             'author' => 'test author name',
@@ -118,7 +118,7 @@ class LaravelTest extends TestCase
             ->post('/php-responsive-quote', $data);
             
         $this->assertDatabaseHas('quotes', ['author' => 'test author name']);
-    }*/
+    }
 
     /** @test */
     public function the_route_random_quote_can_be_accessed()
