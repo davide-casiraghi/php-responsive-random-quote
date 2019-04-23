@@ -22,7 +22,7 @@ composer require davide-casiraghi/php-responsive-random-quote
 ```bash
 php artisan vendor:publish --force
 ```
-And then pick the number of our service provider.
+And then pick the number of the related service provider.
 
 ## Create the DB tables
 ```bash
