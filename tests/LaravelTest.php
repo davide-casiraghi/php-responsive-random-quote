@@ -37,7 +37,7 @@ class LaravelTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-
+        
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadLaravelMigrations(['--database' => 'testbench']);
     }
@@ -73,24 +73,14 @@ class LaravelTest extends TestCase
     /** @test */
     public function it_runs_the_migrations()
     {
-        //dd("sss");
-        
-        
-        $tables = DB::select("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;");
+            
+        /*$tables = DB::select("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;");
         $tables = array_map('current',$tables);
-        dd($tables);
-        
-        
+        dd($tables);*/
         
         Quote::insert([
             'author' => 'test author name',
-            'text' => 'dummy quote',
         ]);
-        
-        
-        
-        
-        dd("aaa 1");
 
         $quote = Quote::where('author', '=', 'test author name')->first();
 
