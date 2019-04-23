@@ -7,7 +7,7 @@
             <h4>Quotes list</h4>
         </div>
         <div class="col-12 col-sm-6 mt-4 mt-sm-0 text-right">
-            <a class="btn btn-success create-new" href="{{ route('php-responsive-quote.create') }}">Add new photo datas</a>
+            <a class="btn btn-success create-new" href="{{ route('php-responsive-quote.create') }}">Add new quote</a>
         </div>
     </div>
     
@@ -29,7 +29,7 @@
                         {{ $quote->text }}
                     </div>
                 </div>
-                {{--
+                
                 <div class="col-12 pb-2">
                     <form action="{{ route('php-responsive-quote.destroy',$quote->id) }}" method="POST">
                         <a class="btn btn-primary float-right" href="{{ route('php-responsive-quote.edit',$quote->id) }}">Edit</a>
@@ -39,7 +39,7 @@
 
                         <button type="submit" class="btn btn-link pl-0">Delete</button>
                     </form>
-                </div>--}}    
+                </div>
             </div>
         @endforeach            
     </div>
