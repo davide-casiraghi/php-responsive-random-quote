@@ -82,7 +82,22 @@ class ResponsiveQuoteController
 
         return view('php-responsive-quote::show', compact('quote'));
     }
-        
+    
+    /***************************************************************************/
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Country  $country
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id = null)
+    {
+        $quote = Quote::find($id);
+
+        return view('php-responsive-quote::edit', compact('quote'));
+    }
+
     /***************************************************************************/
 
     /**

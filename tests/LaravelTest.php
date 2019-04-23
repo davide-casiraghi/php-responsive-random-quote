@@ -138,6 +138,25 @@ class LaravelTest extends TestCase
             //->assertViewHas('galleryImage')
             ->assertStatus(200);
     }
+    
+    /** @test */
+    public function the_route_edit_can_be_accessed()
+    {
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+        
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => "test text",
+            'locale' => 'en'
+        ]);
+
+        $this->get('responsive-gallery/1/edit')
+            ->assertViewIs('laravel-responsive-gallery::edit')
+            //->assertViewHas('galleryImage')
+            ->assertStatus(200);
+    }
 
 
     /** @test */
