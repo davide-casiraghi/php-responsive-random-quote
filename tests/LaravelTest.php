@@ -106,6 +106,23 @@ class LaravelTest extends TestCase
     }
     
     /** @test */
+    public function the_route_destroy_can_be_accessed()
+    {
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+        
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => "test text",
+            'locale' => 'en'
+        ]);
+
+        $this->delete('php-responsive-quote/1')
+            ->assertStatus(302);
+    }
+    
+    /** @test */
     public function the_route_store_can_be_accessed()
     {
         $data = [
@@ -157,7 +174,6 @@ class LaravelTest extends TestCase
             ->assertViewHas('quote')
             ->assertStatus(200);
     }
-
 
     /** @test */
     public function the_route_random_quote_can_be_accessed()

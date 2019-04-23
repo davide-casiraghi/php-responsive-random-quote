@@ -101,13 +101,47 @@ class ResponsiveQuoteController
     /***************************************************************************/
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Quote  $quote
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $quote = Quote::find($id);
+        $quote->update($request->all());
+
+        return redirect()->route('php-responsive-quote.index')
+                            ->with('success', 'Quote updated succesfully');
+    }
+
+    /***************************************************************************/
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Country  $country
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $quote = Quote::find($id);
+        $quote->delete();
+
+        return redirect()->route('php-responsive-quote.index')
+                            ->with('success', 'Quote deleted succesfully');
+    }
+    
+    /***************************************************************************/
+
+    /**
      * Display the specified resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function showRandomQuote()
     {
-        
         $quote = PhpResponsiveQuote::getRandomQuote();
 
         // the view name is set in the - Service provider - boot - loadViewsFrom
