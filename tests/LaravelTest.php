@@ -52,6 +52,21 @@ class LaravelTest extends TestCase
             ->assertViewIs('php-responsive-quote::create')
             ->assertStatus(200);
     }
+    
+    /** @test */
+    public function the_route_store_can_be_accessed()
+    {
+        $data = [
+            'author' => 'test author name',
+            'text' => 'dummy quote',
+        ];
+
+        $this
+            ->followingRedirects()
+            ->post('/php-responsive-quote', $data);
+
+        $this->assertDatabaseHas('quotes', ['author' => 'test author name']);
+    }
 
     /** @test */
     public function the_route_random_quote_can_be_accessed()
