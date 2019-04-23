@@ -19,21 +19,21 @@ class ResponsiveQuoteController
      public function index(Request $request)
      {
          
-         /*$searchKeywords = $request->input('keywords');
+         $searchKeywords = $request->input('keywords');
 
          if ($searchKeywords) {
-             $galleryImages = GalleryImage::orderBy('file_name')
-                                     ->where('file_name', 'like', '%'.$request->input('keywords').'%')
+             $quotes = Quote::orderBy('author')
+                                     ->where('author', 'like', '%'.$request->input('keywords').'%')
                                      ->paginate(20);
          } else {
-             $galleryImages = GalleryImage::orderBy('file_name')
+             $quotes = Quote::orderBy('author')
                                      ->paginate(20);
-         }*/
+         }
 
-         /*return view('php-responsive-quote::index', compact('galleryImages'))
+         return view('php-responsive-quote::index', compact('quotes'))
                              ->with('i', (request()->input('page', 1) - 1) * 20)
-                             ->with('searchKeywords', $searchKeywords);*/
-        return view('php-responsive-quote::index');                     
+                             ->with('searchKeywords', $searchKeywords);
+        //return view('php-responsive-quote::index');                     
      }
     
      /***************************************************************************/
