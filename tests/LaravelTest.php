@@ -6,6 +6,8 @@ use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Artisan;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\PhpResponsiveRandomQuoteServiceProvider;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 
 class LaravelTest extends TestCase
 {
