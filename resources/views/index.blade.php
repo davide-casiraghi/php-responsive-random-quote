@@ -19,9 +19,9 @@
     
     
     {{-- List all the quotes --}}
-    <div class="photoList my-4">
+    <div class="quotesList my-4">
         
-        @foreach ($quotes as $quote)
+        {{--@foreach ($quotes as $quote)
             <div class="row bg-white shadow-1 rounded mb-3 pb-2 pt-3 mx-1">
                 <div class="col-12 py-1">
                     <h5>{{ $quote->author }}</h5>
@@ -41,7 +41,11 @@
                     </form>
                 </div>
             </div>
-        @endforeach            
+        @endforeach--}}
+        
+        
+        
+                      
     </div>
 
 @endsection

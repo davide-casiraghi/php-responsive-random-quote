@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ResponsiveQuoteController
 {
@@ -17,6 +18,8 @@ class ResponsiveQuoteController
     public function index(Request $request)
     {
         $searchKeywords = $request->input('keywords');
+        //$searchCategory = $request->input('category_id');
+        $countriesAvailableForTranslations = LaravelLocalization::getSupportedLocales();
 
         if ($searchKeywords) {
             $quotes = Quote::orderBy('author')
@@ -26,11 +29,12 @@ class ResponsiveQuoteController
             $quotes = Quote::orderBy('author')
                                      ->paginate(20);
         }
+        
 
         return view('php-responsive-quote::index', compact('quotes'))
                              ->with('i', (request()->input('page', 1) - 1) * 20)
-                             ->with('searchKeywords', $searchKeywords);
-        //return view('php-responsive-quote::index');
+                             ->with('searchKeywords', $searchKeywords)
+                             ->with('countriesAvailableForTranslations', $countriesAvailableForTranslations);
     }
 
     /***************************************************************************/
