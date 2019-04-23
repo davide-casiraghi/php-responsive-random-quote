@@ -56,6 +56,8 @@ class LaravelTest extends TestCase
         ];
     }
 
+    /***************************************************************/
+
     /** @test */
     public function the_console_command_returns_a_quote()
     {
@@ -87,8 +89,6 @@ class LaravelTest extends TestCase
         $this->assertEquals('test author name', $quote->author);
     }
 
-
-
     /** @test */
     public function the_route_index_can_be_accessed()
     {
@@ -119,6 +119,26 @@ class LaravelTest extends TestCase
             
         $this->assertDatabaseHas('quotes', ['author' => 'test author name']);
     }
+
+    /** @test */
+    public function the_route_show_can_be_accessed()
+    {
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+        
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => "test text",
+            'locale' => 'en'
+        ]);
+        
+        $this->get('php-responsive-quote/1')
+            ->assertViewIs('php-responsive-quote::show')
+            //->assertViewHas('galleryImage')
+            ->assertStatus(200);
+    }
+
 
     /** @test */
     public function the_route_random_quote_can_be_accessed()

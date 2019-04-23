@@ -68,7 +68,23 @@ class ResponsiveQuoteController
                             ->with('success', 'Quote added succesfully');
     }
 
-    
+    /***************************************************************************/
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Quote  $country
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id = null)
+    {
+        $quote = Quote::find($id);
+
+        return view('php-responsive-quote::show', compact('quote'));
+    }
+        
+    /***************************************************************************/
+
     /**
      * Display the specified resource.
      *
