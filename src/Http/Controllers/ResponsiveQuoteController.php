@@ -73,7 +73,7 @@ class ResponsiveQuoteController
     /**
      * Display the specified resource.
      *
-     * @param  \App\Quote  $country
+     * @param  \App\Quote  $quote
      * @return \Illuminate\Http\Response
      */
     public function show($id = null)
@@ -88,7 +88,7 @@ class ResponsiveQuoteController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Country  $country
+     * @param  \App\Quote  $quote
      * @return \Illuminate\Http\Response
      */
     public function edit($id = null)

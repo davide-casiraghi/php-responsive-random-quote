@@ -135,7 +135,7 @@ class LaravelTest extends TestCase
         
         $this->get('php-responsive-quote/1')
             ->assertViewIs('php-responsive-quote::show')
-            //->assertViewHas('galleryImage')
+            ->assertViewHas('quote')
             ->assertStatus(200);
     }
     
@@ -152,9 +152,9 @@ class LaravelTest extends TestCase
             'locale' => 'en'
         ]);
 
-        $this->get('responsive-gallery/1/edit')
-            ->assertViewIs('laravel-responsive-gallery::edit')
-            //->assertViewHas('galleryImage')
+        $this->get('php-responsive-quote/1/edit')
+            ->assertViewIs('php-responsive-quote::edit')
+            ->assertViewHas('quote')
             ->assertStatus(200);
     }
 
