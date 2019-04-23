@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuoteTranslation extends Model
 {
-    //protected $table = 'gallery_images';
+    protected $table = 'quote_translations';
 
     public $timestamps = false;
     protected $fillable = [

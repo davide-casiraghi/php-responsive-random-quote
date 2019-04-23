@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quote extends Model
 {
-    //protected $table = 'gallery_images';
+    protected $table = 'quotes';
 
     use Translatable;
 
