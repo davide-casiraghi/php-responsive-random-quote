@@ -141,7 +141,7 @@ class LaravelTest extends TestCase
           ]);
 
         $this->put('php-responsive-quote/1', [$request, 1])
-            ->assertStatus(302);
+             ->assertStatus(302);
     }
     
     /** @test */

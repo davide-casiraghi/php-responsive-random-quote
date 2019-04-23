@@ -7,6 +7,7 @@ use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class ResponsiveQuoteController
 {
@@ -110,7 +111,18 @@ class ResponsiveQuoteController
     public function update(Request $request, $id)
     {
         $quote = Quote::find($id);
-        $quote->update($request->all());
+        
+        // Set the default language to edit the quote in English
+        App::setLocale('en');
+        
+        $this->saveOnDb($request, $quote);
+        
+        //$quote->update($request->all());
+        
+        /*$quote->author = 'author updated';
+        $quote->translate('en')->text = 'updated text';
+        $quote->save();*/
+        
 
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote updated succesfully');
@@ -132,7 +144,21 @@ class ResponsiveQuoteController
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote deleted succesfully');
     }
-    
+    /***************************************************************************/
+
+    /**
+     * Save the record on DB.
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Quote  $post
+     * @return void
+     */
+    public function saveOnDb($request, $quote)
+    {
+        $quote->translateOrNew('en')->text = $request->get('text');
+        $quote->author = $request->get('author');
+        $quote->save();
+    }
+        
     /***************************************************************************/
 
     /**
