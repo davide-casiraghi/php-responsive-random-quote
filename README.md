@@ -8,7 +8,7 @@
 # Reponsive Random Quotes
 
 Show a random quote or the quote of the day in your PHP Laravel project.  
-The quote support multi language trough laravel-translatable package.
+The package support multi language trough laravel-translatable package.
 
 ## Installation
 
