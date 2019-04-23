@@ -10,7 +10,6 @@ class QuoteTranslation extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'text'
+        'text',
     ];
-
 }
