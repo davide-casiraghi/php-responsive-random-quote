@@ -10,7 +10,8 @@
     ],
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "dimsav/laravel-translatable": "^9.4"
+        "dimsav/laravel-translatable": "^9.4",
+        "nesbot/carbon": "^2.17"
     },
     "autoload": {
         "psr-4": {
