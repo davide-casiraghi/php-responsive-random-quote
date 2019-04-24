@@ -44,6 +44,7 @@ class LaravelTest extends TestCase
     {
         return [
             PhpResponsiveRandomQuoteServiceProvider::class,
+            \Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         ];
     }
 
@@ -51,6 +52,7 @@ class LaravelTest extends TestCase
     {
         return [
             'PhpResponsiveQuote' => PhpResponsiveQuote::class, // facade called PhpResponsiveQuote and the name of the facade class
+            'LaravelLocalization' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         ];
     }
 
@@ -90,9 +92,9 @@ class LaravelTest extends TestCase
     /** @test */
     public function the_route_index_can_be_accessed()
     {
-        $this->get('php-responsive-quote')->dump();
-//            ->assertViewIs('php-responsive-quote::index')
-//            ->assertStatus(200);
+        $this->get('php-responsive-quote')
+            ->assertViewIs('php-responsive-quote::index')
+            ->assertStatus(200);
     }
 
     /** @test */
