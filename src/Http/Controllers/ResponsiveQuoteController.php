@@ -30,7 +30,6 @@ class ResponsiveQuoteController
                                      ->paginate(20);
         }
         
-
         return view('php-responsive-quote::index', compact('quotes'))
                              ->with('i', (request()->input('page', 1) - 1) * 20)
                              ->with('searchKeywords', $searchKeywords)
