@@ -155,7 +155,7 @@ class LaravelQuoteTranslationTest extends TestCase
             'locale' => 'en',
         ]);
         
-        QuoteTranslation::insert([
+        $translationId = QuoteTranslation::insertGetId([
             'quote_id' => $id,
             'text' => 'test spanish text',
             'locale' => 'es',
@@ -163,11 +163,16 @@ class LaravelQuoteTranslationTest extends TestCase
 
         $request = new \Illuminate\Http\Request();
         $request->replace([
-              'text' => 'test spanish text updated',
-          ]);
+            'id' => $translationId,
+            'quote_id' => $id,
+            'text' => 'test spanish text updated',
+            'locale' => 'es',
+         ]);
 
-        $this->put('php-responsive-quote-translation/'.$id, [$request, $id])
+        $this->put('php-responsive-quote-translation/'.$translationId, [$request, $translationId])
              ->assertStatus(302);
+             
+        //$this->assertDatabaseHas('quote_translations', ['text' => 'test spanish text updated']);
     }
 
 }
