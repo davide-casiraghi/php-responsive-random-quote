@@ -40,13 +40,28 @@
                     'value' => $quoteTranslation->text,
                     'required' => true,
                 ])
+            </div>    
+        </div>
+        
+        <div class="row mt-2">  
+            <div class="col-12 action">
+                @include('php-responsive-quote::partials.buttons-back-submit', [
+                    'route' => 'php-responsive-quote.index'  
+                ])
+    </form>
+
+                <form action="{{ route('php-responsive-quote-translation.destroy',$quoteTranslation->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-link pl-0">Delete translation</button>
+                </form>
             </div>
-            
         </div>
 
-        @include('php-responsive-quote::partials.buttons-back-submit', [
-            'route' => 'php-responsive-quote.index'  
-        ])
+
+
+
+        
 
     </form>
 
