@@ -66,11 +66,9 @@
                             <div class="col-12 mb-4 mt-4">
                                 @foreach ($countriesAvailableForTranslations as $key => $countryAvTrans)
                                     @if($quote->hasTranslation($key))
-                                        <a href="/postTranslations/{{ $quote->id }}/{{ $key }}/edit" class="bg-success text-white px-2 py-1 mb-1 mb-lg-0 d-inline-block rounded">{{$key}}</a>
+                                        <a href="{{ route('php-responsive-quote-translation.edit', ['quoteId' => $quote->id, 'languageCode' => $key]) }}" class="bg-success text-white px-2 py-1 mb-1 mb-lg-0 d-inline-block rounded">{{$key}}</a>
                                     @else
-                                        {{--<a href="/postTranslations/{{ $quote->id }}/{{ $key }}/create" class="bg-secondary text-white px-2 py-1 mb-1 mb-lg-0 d-inline-block rounded">{{$key}}</a>--}}
                                         <a href="{{ route('php-responsive-quote-translation.create', ['quoteId' => $quote->id, 'languageCode' => $key]) }}" class="bg-secondary text-white px-2 py-1 mb-1 mb-lg-0 d-inline-block rounded">{{$key}}</a>
-                                        
                                     @endif
                                 @endforeach
                             </div>
