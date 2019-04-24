@@ -8,6 +8,7 @@ use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Validator;
 
 class ResponsiveQuoteTranslationController
 {
@@ -29,7 +30,7 @@ class ResponsiveQuoteTranslationController
                 ->with('selectedLocaleName', $selectedLocaleName);
     }
 
-    // **********************************************************************
+    /***************************************************************************/
     
     /**
      * Show the form for editing the specified resource.
@@ -52,7 +53,51 @@ class ResponsiveQuoteTranslationController
                     ->with('selectedLocaleName', $selectedLocaleName);
     }
     
-    // **********************************************************************
+    /***************************************************************************/
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        // Validate form datas
+        $validator = Validator::make($request->all(), [
+                'text' => 'required',
+            ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $quoteTranslation = new QuoteTranslation();
+
+        $this->saveOnDb($request, $quoteTranslation);
+
+        return redirect()->route('php-responsive-quote.index')
+                            ->with('success', 'Quote translation added succesfully');
+    }
+    
+    /***************************************************************************/
+
+    /**
+     * Save the record on DB.
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\QuoteTranslation  $quoteTranslation
+     * @return void
+     */
+    public function saveOnDb($request, $quoteTranslation)
+    {
+        $quoteTranslation->quote_id = $request->get('quote_id');
+        $quoteTranslation->locale = $request->get('language_code');
+            
+        $quoteTranslation->text = $request->get('text');
+        $quoteTranslation->save();
+    }
+
+    /***************************************************************************/
 
     /**
      * Get the language name from language code.
