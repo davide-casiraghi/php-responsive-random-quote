@@ -51,6 +51,12 @@ Then in any blade file is possible include the view like this:
 ])
 ```
 
+## Add quotes to the database table
+
+The package adds in the application in which it is installed the route **/php-responsive-quote/**  
+From this route it's possible to add, edit and remove the quotes and their translations.
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
