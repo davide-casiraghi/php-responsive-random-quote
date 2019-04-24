@@ -2,13 +2,11 @@
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
-use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
-use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Validator;
+use Illuminate\Http\Request;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 
 class ResponsiveQuoteTranslationController
 {
@@ -31,7 +29,7 @@ class ResponsiveQuoteTranslationController
     }
 
     /***************************************************************************/
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -52,7 +50,7 @@ class ResponsiveQuoteTranslationController
                     ->with('languageCode', $languageCode)
                     ->with('selectedLocaleName', $selectedLocaleName);
     }
-    
+
     /***************************************************************************/
 
     /**
@@ -79,6 +77,7 @@ class ResponsiveQuoteTranslationController
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote translation added succesfully');
     }
+
     /***************************************************************************/
 
     /**
@@ -93,15 +92,15 @@ class ResponsiveQuoteTranslationController
         request()->validate([
             'text' => 'required',
         ]);
-        
+
         $quoteTranslation = QuoteTranslation::find($quoteTranslationId);
-        
+
         $this->saveOnDb($request, $quoteTranslation);
 
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote translation added succesfully');
     }
-        
+
     /***************************************************************************/
 
     /**
@@ -114,7 +113,7 @@ class ResponsiveQuoteTranslationController
     {
         $quoteTranslation->quote_id = $request->get('quote_id');
         $quoteTranslation->locale = $request->get('language_code');
-            
+
         $quoteTranslation->text = $request->get('text');
         $quoteTranslation->save();
     }
@@ -150,5 +149,4 @@ class ResponsiveQuoteTranslationController
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote translation deleted succesfully');
     }
-    
 }
