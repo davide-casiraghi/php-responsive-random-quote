@@ -73,5 +73,30 @@ class LaravelQuoteTranslationTest extends TestCase
             ->assertStatus(200);
     }
 
+    /** @test */
+    public function the_route_edit_translation_can_be_accessed()
+    {
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => 'test text',
+            'locale' => 'en',
+        ]);
+        
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => 'test spanish text',
+            'locale' => 'es',
+        ]);
+
+        $this->get('php-responsive-quote-translation/'.$id.'/es/edit')
+            ->assertViewIs('php-responsive-quote::quoteTranslations.edit')
+            ->assertViewHas('quoteId')
+            ->assertViewHas('languageCode')
+            ->assertStatus(200);
+    }
 
 }
