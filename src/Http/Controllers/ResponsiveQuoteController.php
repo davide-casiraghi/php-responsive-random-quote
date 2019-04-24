@@ -107,7 +107,7 @@ class ResponsiveQuoteController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Quote  $quote
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -128,7 +128,7 @@ class ResponsiveQuoteController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Country  $country
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

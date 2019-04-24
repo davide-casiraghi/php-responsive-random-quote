@@ -136,4 +136,18 @@ class ResponsiveQuoteTranslationController
 
     /***************************************************************************/
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $quoteTranslationId
+     */
+    public function destroy($quoteTranslationId)
+    {
+        $quoteTranslation = QuoteTranslation::find($quoteTranslationId);
+        $quoteTranslation->delete();
+
+        return redirect()->route('php-responsive-quote.index')
+                            ->with('success', 'Quote translation deleted succesfully');
+    }
+    
 }
