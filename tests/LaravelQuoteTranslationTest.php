@@ -59,8 +59,17 @@ class LaravelQuoteTranslationTest extends TestCase
     /** @test */
     public function the_route_create_translation_can_be_accessed()
     {
-        $this->get('php-responsive-quote/create')
-            ->assertViewIs('php-responsive-quote::quotes.create')
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => 'test text',
+            'locale' => 'en',
+        ]);
+        
+        $this->get('php-responsive-quote-translation/1/es/create')
+            ->assertViewIs('php-responsive-quote::quoteTranslations.create')
             ->assertStatus(200);
     }
 
