@@ -10,7 +10,7 @@ use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\PhpResponsiveRandomQuoteServiceProvider;
 
-class LaravelTest extends TestCase
+class LaravelQuoteTest extends TestCase
 {
     /**
      * Define environment setup.
