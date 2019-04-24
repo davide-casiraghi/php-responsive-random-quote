@@ -102,14 +102,19 @@ class LaravelQuoteTranslationTest extends TestCase
     /** @test */
     public function the_route_store_translation_can_be_accessed()
     {
-        $data = [
+        $id = Quote::insertGetId([
             'author' => 'test author name',
-            'text' => 'dummy quote',
+        ]);
+        
+        $data = [
+            'quote_id' => $id,
+            'language_code' => 'es',
+            'text' => 'test translation text',
         ];
 
         $this
             ->followingRedirects()
-            ->post('/php-responsive-quote', $data);
+            ->post('/php-responsive-quote-translation', $data);
 
         $this->assertDatabaseHas('quote_translations', ['text' => 'test translation text']);
     }
