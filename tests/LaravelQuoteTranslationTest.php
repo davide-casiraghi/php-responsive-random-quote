@@ -68,7 +68,7 @@ class LaravelQuoteTranslationTest extends TestCase
             'locale' => 'en',
         ]);
         
-        $this->get('php-responsive-quote-translation/1/es/create')
+        $this->get('php-responsive-quote-translation/'.$id.'/es/create')
             ->assertViewIs('php-responsive-quote::quoteTranslations.create')
             ->assertStatus(200);
     }
