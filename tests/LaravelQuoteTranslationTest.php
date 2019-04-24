@@ -3,8 +3,6 @@
 namespace Davidecasiraghi\PhpResponsiveRandomQuote\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Artisan;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Facades\PhpResponsiveQuote;
@@ -67,7 +65,7 @@ class LaravelQuoteTranslationTest extends TestCase
             'text' => 'test text',
             'locale' => 'en',
         ]);
-        
+
         $this->get('php-responsive-quote-translation/'.$id.'/es/create')
             ->assertViewIs('php-responsive-quote::quoteTranslations.create')
             ->assertStatus(200);
@@ -85,7 +83,7 @@ class LaravelQuoteTranslationTest extends TestCase
             'text' => 'test text',
             'locale' => 'en',
         ]);
-        
+
         QuoteTranslation::insert([
             'quote_id' => $id,
             'text' => 'test spanish text',
@@ -98,14 +96,14 @@ class LaravelQuoteTranslationTest extends TestCase
             ->assertViewHas('languageCode')
             ->assertStatus(200);
     }
-    
+
     /** @test */
     public function the_route_store_translation_can_be_accessed()
     {
         $id = Quote::insertGetId([
             'author' => 'test author name',
         ]);
-        
+
         $data = [
             'quote_id' => $id,
             'language_code' => 'es',
@@ -118,7 +116,7 @@ class LaravelQuoteTranslationTest extends TestCase
 
         $this->assertDatabaseHas('quote_translations', ['text' => 'test translation text']);
     }
-    
+
     /** @test */
     public function the_route_destroy_can_be_accessed()
     {
@@ -131,7 +129,7 @@ class LaravelQuoteTranslationTest extends TestCase
             'text' => 'test text',
             'locale' => 'en',
         ]);
-        
+
         QuoteTranslation::insert([
             'quote_id' => $id,
             'text' => 'test spanish text',
@@ -141,7 +139,7 @@ class LaravelQuoteTranslationTest extends TestCase
         $this->delete('php-responsive-quote-translation/'.$id)
             ->assertStatus(302);
     }
-    
+
     /** @test */
     public function the_route_update_can_be_accessed()
     {
@@ -154,30 +152,29 @@ class LaravelQuoteTranslationTest extends TestCase
             'text' => 'test text',
             'locale' => 'en',
         ]);
-        
+
         $translationId = QuoteTranslation::insertGetId([
             'quote_id' => $id,
             'text' => 'test spanish text',
             'locale' => 'es',
         ]);
-    
+
         $request = new \Illuminate\Http\Request();
         $request->replace([
             'quote_translation_id' => $translationId,
             'quote_id' => $id,
             'text' => 'test spanish text updated',
-            'language_code' => 'es'
+            'language_code' => 'es',
          ]);
 
-         //dd($request);
+        //dd($request);
         /*$this->followingRedirects()
              ->put('php-responsive-quote-translation/'.$translationId, [$request, $translationId])->dump();
              //->assertStatus(302);*/
-             
-             $this->put('php-responsive-quote-translation/'.$translationId, [$request, $translationId])
+
+        $this->put('php-responsive-quote-translation/'.$translationId, [$request, $translationId])
                   ->assertStatus(302);
-             
+
         //$this->assertDatabaseHas('quote_translations', ['text' => 'test spanish text updated']);
     }
-
 }
