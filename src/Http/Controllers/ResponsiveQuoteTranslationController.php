@@ -21,7 +21,6 @@ class ResponsiveQuoteTranslationController
      */
     public function create($quoteId, $languageCode)
     {
-        
         $selectedLocaleName = $this->getSelectedLocaleName($languageCode);
 
         return view('php-responsive-quote::quoteTranslations.create')
