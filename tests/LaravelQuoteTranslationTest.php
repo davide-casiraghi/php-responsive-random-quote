@@ -98,5 +98,21 @@ class LaravelQuoteTranslationTest extends TestCase
             ->assertViewHas('languageCode')
             ->assertStatus(200);
     }
+    
+    /** @test */
+    public function the_route_store_translation_can_be_accessed()
+    {
+        $data = [
+            'author' => 'test author name',
+            'text' => 'dummy quote',
+        ];
+
+        $this
+            ->followingRedirects()
+            ->post('/php-responsive-quote', $data);
+
+        $this->assertDatabaseHas('quote_translations', ['text' => 'test translation text']);
+    }
+    
 
 }
