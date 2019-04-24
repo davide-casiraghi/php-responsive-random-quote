@@ -52,6 +52,22 @@ class ResponsiveQuoteTranslationController
                     ->with('languageCode', $languageCode)
                     ->with('selectedLocaleName', $selectedLocaleName);
     }
+    
+    // **********************************************************************
+
+    /**
+     * Get the language name from language code.
+     *
+     * @param  string $languageCode
+     * @return string
+     */
+    public function getSelectedLocaleName($languageCode)
+    {
+        $countriesAvailableForTranslations = LaravelLocalization::getSupportedLocales();
+        $ret = $countriesAvailableForTranslations[$languageCode]['name'];
+
+        return $ret;
+    }
 
     /***************************************************************************/
 
