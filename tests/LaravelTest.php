@@ -93,7 +93,7 @@ class LaravelTest extends TestCase
     public function the_route_index_can_be_accessed()
     {
         $this->get('php-responsive-quote')
-            ->assertViewIs('php-responsive-quote::index')
+            ->assertViewIs('php-responsive-quote::quotes.index')
             ->assertStatus(200);
     }
 
