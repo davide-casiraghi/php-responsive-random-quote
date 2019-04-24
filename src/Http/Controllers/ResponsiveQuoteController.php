@@ -146,7 +146,7 @@ class ResponsiveQuoteController
     /**
      * Save the record on DB.
      * @param  \Illuminate\Http\Request  $request
-     * @param  DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote  $quote
+     * @param  \DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote  $quote
      * @return void
      */
     public function saveOnDb($request, $quote)
