@@ -98,7 +98,7 @@ class ResponsiveQuoteController
     {
         $quote = Quote::find($id);
 
-        return view('php-responsive-quote::edit', compact('quote'));
+        return view('php-responsive-quote::quotes.edit', compact('quote'));
     }
 
     /***************************************************************************/
