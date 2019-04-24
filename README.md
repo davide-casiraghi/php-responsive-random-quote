@@ -5,7 +5,7 @@
 <a href="https://codeclimate.com/github/davide-casiraghi/php-responsive-random-quote/maintainability"><img src="https://api.codeclimate.com/v1/badges/4edf745f2b64f7f0a53c/maintainability" /></a>
 [![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/php-responsive-random-quote.svg)](https://github.com/davide-casiraghi/php-responsive-random-quote) 
 
-# Reponsive Random Quotes
+# Laravel Reponsive Random Quotes
 
 Show a random quote or the quote of the day in your PHP Laravel project.  
 The package support multi language trough dimsav/laravel-translatable and mcamara/laravel-localization packages.
