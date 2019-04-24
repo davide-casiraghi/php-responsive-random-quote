@@ -119,5 +119,27 @@ class LaravelQuoteTranslationTest extends TestCase
         $this->assertDatabaseHas('quote_translations', ['text' => 'test translation text']);
     }
     
+    /** @test */
+    public function the_route_destroy_can_be_accessed()
+    {
+        $id = Quote::insertGetId([
+            'author' => 'test author name',
+        ]);
+
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => 'test text',
+            'locale' => 'en',
+        ]);
+        
+        QuoteTranslation::insert([
+            'quote_id' => $id,
+            'text' => 'test spanish text',
+            'locale' => 'es',
+        ]);
+
+        $this->delete('php-responsive-quote-translation/'.$id)
+            ->assertStatus(302);
+    }
 
 }
