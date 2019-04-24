@@ -106,7 +106,7 @@ class ResponsiveQuoteTranslationController
     /**
      * Save the record on DB.
      * @param  \Illuminate\Http\Request  $request
-     * @param  DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation  $quoteTranslation
+     * @param  \DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation  $quoteTranslation
      * @return void
      */
     public function saveOnDb($request, $quoteTranslation)
