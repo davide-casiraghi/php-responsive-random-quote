@@ -16,7 +16,7 @@ class ResponsiveQuoteTranslationController
 
     /**
      * Show the form for creating a new resource.
-     * @param int $categoryId
+     * @param int $quoteId
      * @param string $languageCode
      * @return \Illuminate\Http\Response
      */
@@ -35,7 +35,7 @@ class ResponsiveQuoteTranslationController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $categoryId
+     * @param int $quoteId
      * @param string $languageCode
      * @return \Illuminate\Http\Response
      */
@@ -85,15 +85,16 @@ class ResponsiveQuoteTranslationController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  int  $quoteTranslationId
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $quoteTranslationId)
     {
         request()->validate([
             'text' => 'required',
         ]);
         
-        $quoteTranslation = QuoteTranslation::find($id);
+        $quoteTranslation = QuoteTranslation::find($quoteTranslationId);
         
         $this->saveOnDb($request, $quoteTranslation);
 
