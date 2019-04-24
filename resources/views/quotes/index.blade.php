@@ -1,4 +1,4 @@
-@extends('php-responsive-quote::layout')
+@extends('php-responsive-quote::quotes.layout')
 
 @section('content')
     
