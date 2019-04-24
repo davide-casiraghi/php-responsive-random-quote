@@ -101,7 +101,7 @@ class LaravelTest extends TestCase
     public function the_route_create_can_be_accessed()
     {
         $this->get('php-responsive-quote/create')
-            ->assertViewIs('php-responsive-quote::create')
+            ->assertViewIs('php-responsive-quote::quotes.create')
             ->assertStatus(200);
     }
 

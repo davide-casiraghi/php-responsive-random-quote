@@ -45,7 +45,7 @@ class ResponsiveQuoteController
      */
     public function create()
     {
-        return view('php-responsive-quote::create');
+        return view('php-responsive-quote::quotes.create');
     }
 
     /***************************************************************************/
