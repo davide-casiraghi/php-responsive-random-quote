@@ -13,6 +13,7 @@ class ResponsiveQuoteController
     /**
      * Display the specified resource.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -76,7 +77,7 @@ class ResponsiveQuoteController
     /**
      * Display the specified resource.
      *
-     * @param  \App\Quote  $quote
+     * @param  int $quoteId
      * @return \Illuminate\Http\Response
      */
     public function show($quoteId = null)
@@ -91,7 +92,7 @@ class ResponsiveQuoteController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Quote  $quote
+     * @param  int $quoteId
      * @return \Illuminate\Http\Response
      */
     public function edit($quoteId = null)
@@ -145,7 +146,7 @@ class ResponsiveQuoteController
     /**
      * Save the record on DB.
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Quote  $post
+     * @param  \App\Quote  $quote
      * @return void
      */
     public function saveOnDb($request, $quote)
