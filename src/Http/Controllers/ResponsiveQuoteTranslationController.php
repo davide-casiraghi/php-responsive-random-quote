@@ -90,9 +90,9 @@ class ResponsiveQuoteTranslationController
      */
     public function update(Request $request, QuoteTranslation $quoteTranslation)
     {
-        request()->validate([
+        /*request()->validate([
             'text' => 'required',
-        ]);
+        ]);*/
 
         $this->saveOnDb($request, $quoteTranslation);
 
