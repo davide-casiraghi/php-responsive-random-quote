@@ -79,7 +79,27 @@ class ResponsiveQuoteTranslationController
         return redirect()->route('php-responsive-quote.index')
                             ->with('success', 'Quote translation added succesfully');
     }
-    
+    /***************************************************************************/
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\QuoteTranslation  $quoteTranslation
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, QuoteTranslation $quoteTranslation)
+    {
+        request()->validate([
+            'text' => 'required',
+        ]);
+
+        $this->saveOnDb($request, $quoteTranslation);
+
+        return redirect()->route('php-responsive-quote.index')
+                            ->with('success', 'Quote translation added succesfully');
+    }
+        
     /***************************************************************************/
 
     /**
