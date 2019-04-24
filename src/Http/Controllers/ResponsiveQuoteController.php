@@ -83,7 +83,7 @@ class ResponsiveQuoteController
     {
         $quote = Quote::find($id);
 
-        return view('php-responsive-quote::show', compact('quote'));
+        return view('php-responsive-quote::quotes.show', compact('quote'));
     }
 
     /***************************************************************************/

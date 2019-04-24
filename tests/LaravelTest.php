@@ -174,7 +174,7 @@ class LaravelTest extends TestCase
         ]);
 
         $this->get('php-responsive-quote/1')
-            ->assertViewIs('php-responsive-quote::show')
+            ->assertViewIs('php-responsive-quote::quotes.show')
             ->assertViewHas('quote')
             ->assertStatus(200);
     }
