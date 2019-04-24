@@ -128,12 +128,12 @@ class ResponsiveQuoteController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $quoteId
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($quoteId)
     {
-        $quote = Quote::find($id);
+        $quote = Quote::find($quoteId);
         $quote->delete();
 
         return redirect()->route('php-responsive-quote.index')
