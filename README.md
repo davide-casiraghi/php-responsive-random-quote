@@ -45,7 +45,7 @@ $quote = $quotes->getRandomQuote();
 ```
 Then in any blade file is possible include the view like this:
 ```php
-@include('vendor.responsive-quotes.index', [
+@include('vendor.responsive-quotes.show-random-quote', [
    'quoteAuthor' => $quote['text'],
    'quoteText' => $quote['author'],
 ])
