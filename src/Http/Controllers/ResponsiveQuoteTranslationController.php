@@ -85,15 +85,16 @@ class ResponsiveQuoteTranslationController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\QuoteTranslation  $quoteTranslation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, QuoteTranslation $quoteTranslation)
+    public function update(Request $request, $id)
     {
-        /*request()->validate([
+        request()->validate([
             'text' => 'required',
-        ]);*/
-
+        ]);
+        
+        $quoteTranslation = QuoteTranslation::find($id);
+        
         $this->saveOnDb($request, $quoteTranslation);
 
         return redirect()->route('php-responsive-quote.index')

@@ -15,7 +15,7 @@
           'style' => 'alert-danger',
     ])
 
-    <form action="{{ route('php-responsive-quote-translation.update') }}" method="POST">
+    <form action="{{ route('php-responsive-quote-translation.update', $quoteTranslation->id) }}" method="POST">
         @csrf
         @method('PUT')
             @include('php-responsive-quote::partials.input-hidden', [
@@ -37,7 +37,7 @@
                     'title' => 'Text',
                     'name' => 'text',
                     'placeholder' => 'Quote text',
-                    'value' => $eventCategoryTranslation->text,
+                    'value' => $quoteTranslation->text,
                     'required' => true,
                 ])
             </div>
