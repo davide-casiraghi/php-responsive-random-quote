@@ -1,13 +1,13 @@
 <?php
 
 namespace DavideCasiraghi\PhpResponsiveRandomQuote;
-
+use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 //use GuzzleHttp\Client;
 
 class QuoteFactory
 {
 
-    protected $quotes = [
+    /*protected $quotes = [
         0 => [
             'author' => 'Dr. Ida Rolf',
             'text' => 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
@@ -28,8 +28,10 @@ class QuoteFactory
             'author' => 'Lao Tsu',
             'text' => 'All actions begins in rest.',
         ],
-    ];
-
+    ];*/
+    
+    // protected $quotes = Quote::inRandomOrder()->first();
+    
     public function __construct(array $quotes = null)
     {
         if ($quotes) {
@@ -40,6 +42,7 @@ class QuoteFactory
     public function getRandomQuote()
     {
         //dd($this->quotes[array_rand($this->quotes)]);
-        return $this->quotes[array_rand($this->quotes)];
+        //return $this->quotes[array_rand($this->quotes)];
+        return Quote::inRandomOrder()->first();
     }
 }
