@@ -79,9 +79,9 @@ class ResponsiveQuoteController
      * @param  \App\Quote  $quote
      * @return \Illuminate\Http\Response
      */
-    public function show($id = null)
+    public function show($quoteId = null)
     {
-        $quote = Quote::find($id);
+        $quote = Quote::find($quoteId);
 
         return view('php-responsive-quote::quotes.show', compact('quote'));
     }
@@ -94,9 +94,9 @@ class ResponsiveQuoteController
      * @param  \App\Quote  $quote
      * @return \Illuminate\Http\Response
      */
-    public function edit($id = null)
+    public function edit($quoteId = null)
     {
-        $quote = Quote::find($id);
+        $quote = Quote::find($quoteId);
 
         return view('php-responsive-quote::quotes.edit', compact('quote'));
     }
@@ -107,12 +107,12 @@ class ResponsiveQuoteController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $quoteId
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $quoteId)
     {
-        $quote = Quote::find($id);
+        $quote = Quote::find($quoteId);
 
         // Set the default language to update the quote in English
         App::setLocale('en');
