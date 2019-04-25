@@ -28,6 +28,7 @@ And then pick the number of the related service provider.
 ```bash
 php artisan migrate
 ```
+This will create in your databases two new tables: **quotes** and **quote_translations**.  
 
 ## Import the _responsive-quote.scss file in /resources/scss/app.scss
 ```php
