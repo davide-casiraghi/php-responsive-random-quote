@@ -165,10 +165,6 @@ class ResponsiveQuoteController
      */
     public function showRandomQuote()
     {
-        //$quotes = Quote::inRandomOrder()->first();
-        //$quotes = Quote::all();
-        //dd($quotes);
-        //PhpResponsiveQuote::setValue($quotes);
         $quote = PhpResponsiveQuote::getRandomQuote();
 
         // the view name is set in the - Service provider - boot - loadViewsFrom
