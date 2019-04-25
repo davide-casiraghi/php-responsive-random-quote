@@ -75,7 +75,7 @@ class LaravelQuoteTest extends TestCase
     /** @test */
     public function it_runs_the_migrations()
     {
-
+        // Shows all the tables in the sqlite DB
         /*$tables = DB::select("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;");
         $tables = array_map('current',$tables);
         dd($tables);*/
