@@ -7,7 +7,7 @@ use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 class QuoteFactory
 {
 
-    /*protected $quotes = [
+    protected $quotes = [
         0 => [
             'author' => 'Dr. Ida Rolf',
             'text' => 'We want to get into the place where gravity reinforces and is a friend, a nourishing force.',
@@ -28,21 +28,21 @@ class QuoteFactory
             'author' => 'Lao Tsu',
             'text' => 'All actions begins in rest.',
         ],
-    ];*/
+    ];
     
     // protected $quotes = Quote::inRandomOrder()->first();
     
-    public function __construct(array $quotes = null)
+    /*public function setValue($quotes)
     {
-        if ($quotes) {
-            $this->quotes = $quotes;
-        }
-    }
+        $this->quotes = $quotes;
+    }*/
 
     public function getRandomQuote()
     {
         //dd($this->quotes[array_rand($this->quotes)]);
         //return $this->quotes[array_rand($this->quotes)];
+        //dd(Quote::inRandomOrder()->first());
+        
         return Quote::inRandomOrder()->first();
     }
 }
