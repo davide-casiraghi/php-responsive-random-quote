@@ -211,8 +211,7 @@ class LaravelQuoteTest extends TestCase
         $this->get('random-quote')
             ->assertViewIs('php-responsive-quote::show-random-quote')
             ->assertStatus(200);
-            //->assertViewHas('quoteAuthor')
+        //->assertViewHas('quoteAuthor')
             //->assertViewHas('quoteText')
-            
     }
 }
