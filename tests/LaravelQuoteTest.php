@@ -201,12 +201,12 @@ class LaravelQuoteTest extends TestCase
     /** @test */
     public function the_route_random_quote_can_be_accessed()
     {
-        PhpResponsiveQuote::shouldReceive('getRandomQuote')
+        /*PhpResponsiveQuote::shouldReceive('getRandomQuote')
             ->once()
             ->andReturn([
                 'author' => 'Moshe Feldenkreis',
                 'text' => 'Another aspect of erect posture is that it is a biological quality of the human frame and there should be no sensation of any doing, holding, or effort whatsoever.',
-            ]);
+            ]);*/
 
         $this->get('random-quote')->dump();
             //->assertViewIs('php-responsive-quote::show-random-quote')
