@@ -58,19 +58,19 @@ Then in any blade file is possible include the view like this:
 ])
 ```
 
-## Testing
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+### Testing
 
 You can run unit tests checking the code coverage using this command.
 ``` bash
 ./vendor/bin/phpunit --coverage-html=html
 ```
 So you can find the reports about the code coverage in this file **/html/index.html**
-
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](./LICENSE.md)
