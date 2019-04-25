@@ -46,9 +46,8 @@ From this route it's possible to add, edit and remove the quotes and their trans
 ```php
 use DavideCasiraghi\PhpResponsiveRandomQuote\QuoteFactory;
 
-$quotes = new QuoteFactory();
+$quote = PhpResponsiveQuote::getRandomQuote();
 
-$quote = $quotes->getRandomQuote();
 ```
 Then in any blade file is possible include the view like this:
 ```php
