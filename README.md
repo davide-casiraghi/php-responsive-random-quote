@@ -1,3 +1,4 @@
+[![Latest Stable Version](https://img.shields.io/packagist/v/davide-casiraghi/php-responsive-random-quote.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/php-responsive-random-quote)
 [![StyleCI](https://styleci.io/repos/173717359/shield?style=flat-square)](https://styleci.io/repos/173717359)
 <a href="https://travis-ci.org/davide-casiraghi/php-responsive-random-quote"><img src="https://travis-ci.org/davide-casiraghi/php-responsive-random-quote.svg" alt="Build Status"></a>
 [![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/php-responsive-random-quote.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/php-responsive-random-quote)
@@ -28,6 +29,7 @@ And then pick the number of the related service provider.
 ```bash
 php artisan migrate
 ```
+This will create in your databases two new tables: **quotes** and **quote_translations**.  
 
 ## Import the _responsive-quote.scss file in /resources/scss/app.scss
 ```php
@@ -57,10 +59,19 @@ Then in any blade file is possible include the view like this:
 ])
 ```
 
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+### Testing
+
+You can run unit tests checking the code coverage using this command.
+``` bash
+./vendor/bin/phpunit --coverage-html=html
+```
+So you can find the reports about the code coverage in this file **/html/index.html**
 
 ## License
 [MIT](./LICENSE.md)
