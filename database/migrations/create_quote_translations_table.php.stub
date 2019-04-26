@@ -12,7 +12,7 @@ class CreateQuoteTranslationsTable extends Migration
             $table->increments('id');
             $table->integer('quote_id')->unsigned();
             
-            $table->string('text')->nullable();
+            $table->text('text')->nullable();
             
             $table->string('locale')->index();
             $table->unique(['quote_id', 'locale']);
