@@ -4,7 +4,6 @@ namespace DavideCasiraghi\PhpResponsiveRandomQuote\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
-use DavideCasiraghi\PhpResponsiveRandomQuote\Models\Quote;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use DavideCasiraghi\PhpResponsiveRandomQuote\Models\QuoteTranslation;
 
