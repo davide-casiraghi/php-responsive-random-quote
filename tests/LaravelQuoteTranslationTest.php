@@ -43,6 +43,7 @@ class LaravelQuoteTranslationTest extends TestCase
         return [
             PhpResponsiveRandomQuoteServiceProvider::class,
             \Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+            \Astrotomic\Translatable\TranslatableServiceProvider::class,
         ];
     }
 
