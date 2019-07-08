@@ -19,13 +19,6 @@ Require the package using composer:
 composer require davide-casiraghi/php-responsive-random-quote
 ```
 
-### Import the scss files
-Add this line to your **resources/sass/app.scss** file:  
-```@import 'vendor/php-responsive-random-quote/responsive-quote';```   
-and then run in console:  
-```npm run dev```  
-
-
 ## Publish the files from the service provider
 ```bash
 php artisan vendor:publish --force
@@ -40,8 +33,11 @@ This will create in your databases two new tables: **quotes** and **quote_transl
 
 ## Import the _responsive-quote.scss file in /resources/scss/app.scss
 ```php
-@import 'vendor/responsive-quotes/responsive-quote';
+@import 'vendor/responsive-quotes/responsive-quote';   
 ```
+
+and then run in console:
+```npm run dev```   
 
 ## Usage
 
